@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class ViewController: UIViewController, VPNViewModelDelegate {
     
     private var viewModel = ViewModel()
     
@@ -24,6 +24,7 @@ final class ViewController: UIViewController {
     private lazy var statusLabel: UILabel = {
         let label = UILabel()
         label.text = "Statuses: Disabled"
+        label.textColor = .systemRed
         label.font = UIFont.boldSystemFont(ofSize: 28)
         label.textAlignment = .center
         return label
@@ -35,7 +36,7 @@ final class ViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 8
         button.backgroundColor = .systemBlue
-        button.addTarget(self, action: #selector(connectButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(toggleConnection), for: .touchUpInside)
         return button
     }()
     
@@ -44,6 +45,7 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.delegate = self
         setupUI()
     }
     
@@ -54,8 +56,30 @@ final class ViewController: UIViewController {
     }
     
     // MARK: - Actions
-    @objc private func connectButtonTapped() {
-        print("Connect button tapped")
+    @objc private func toggleConnection() {
+        print("Toggle connection")
+        if let ipAddress = ipTextField.text, !ipAddress.isEmpty {
+            viewModel.updateIPAddress(ipAddress)
+            viewModel.toggleConnection()
+        } else {
+            
+        }
+    }
+    
+    // MARK: - VPNViewModelDelegate
+    func didUpdateVPNConfig(_ config: VPNConfig) {
+        statusLabel.text = "Statuses: \(config.isConnected ? "Connected" : "Disabled")"
+        
+        if config.isConnected {
+            statusLabel.textColor = .systemGreen
+            connectButton.setTitle("Disconnect", for: .normal)
+        } else {
+            statusLabel.textColor = .systemRed
+            connectButton.setTitle("Connect", for: .normal)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.ipTextField.text = ""
+            }
+        }
     }
     
     // MARK: - Private Methods
