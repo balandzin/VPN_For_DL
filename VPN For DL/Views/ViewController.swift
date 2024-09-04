@@ -9,6 +9,8 @@ import UIKit
 
 final class ViewController: UIViewController {
     
+    private var viewModel = ViewModel()
+    
     // MARK: - GUI Variables
     private lazy var ipTextField: UITextField = {
         let textField = UITextField()

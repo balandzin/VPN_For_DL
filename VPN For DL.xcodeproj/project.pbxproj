@@ -11,6 +11,8 @@
 		D30B71D22C884DC500A5715D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B71D12C884DC500A5715D /* ViewController.swift */; };
 		D30B71D72C884DC700A5715D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30B71D62C884DC700A5715D /* Assets.xcassets */; };
 		D30B71DA2C884DC700A5715D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D30B71D92C884DC700A5715D /* Base */; };
+		D30B71E32C88593500A5715D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B71E22C88593500A5715D /* ViewModel.swift */; };
+		D30B71E72C885BC200A5715D /* VPNConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B71E62C885BC200A5715D /* VPNConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		D30B71D62C884DC700A5715D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D30B71D92C884DC700A5715D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D30B71DB2C884DC700A5715D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D30B71E22C88593500A5715D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		D30B71E62C885BC200A5715D /* VPNConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +56,47 @@
 		D30B71CC2C884DC500A5715D /* VPN For DL */ = {
 			isa = PBXGroup;
 			children = (
-				D30B71CD2C884DC500A5715D /* AppDelegate.swift */,
-				D30B71D12C884DC500A5715D /* ViewController.swift */,
-				D30B71D62C884DC700A5715D /* Assets.xcassets */,
-				D30B71D82C884DC700A5715D /* LaunchScreen.storyboard */,
+				D30B71E82C885BC900A5715D /* Models */,
+				D30B71E12C8858F400A5715D /* Views */,
+				D30B71E42C88593900A5715D /* ViewModels */,
+				D30B71E52C8859AC00A5715D /* Resource */,
 				D30B71DB2C884DC700A5715D /* Info.plist */,
+				D30B71CD2C884DC500A5715D /* AppDelegate.swift */,
 			);
 			path = "VPN For DL";
+			sourceTree = "<group>";
+		};
+		D30B71E12C8858F400A5715D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D30B71D12C884DC500A5715D /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D30B71E42C88593900A5715D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D30B71E22C88593500A5715D /* ViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D30B71E52C8859AC00A5715D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D30B71D62C884DC700A5715D /* Assets.xcassets */,
+				D30B71D82C884DC700A5715D /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D30B71E82C885BC900A5715D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D30B71E62C885BC200A5715D /* VPNConfig.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +169,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D30B71E72C885BC200A5715D /* VPNConfig.swift in Sources */,
 				D30B71D22C884DC500A5715D /* ViewController.swift in Sources */,
+				D30B71E32C88593500A5715D /* ViewModel.swift in Sources */,
 				D30B71CE2C884DC500A5715D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
