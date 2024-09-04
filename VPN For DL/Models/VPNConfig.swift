@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct VPNConfig {
+    var ipAddress: String
+    var isConnected: Bool
+}
