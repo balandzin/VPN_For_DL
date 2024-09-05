@@ -26,11 +26,37 @@ final class ViewModel {
     
     func updateIPAddress(_ ipAddress: String) {
         vpnConfig.ipAddress = ipAddress
+        saveIPToFile(ipAddress)
     }
     
     func toggleConnection() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.vpnConfig.isConnected.toggle()
+            if self.vpnConfig.isConnected {
+                if let lastIP = self.loadIPFromFile() {
+                    print("Last connected IP: \(lastIP)")
+                }
+            }
+        }
+    }
+    
+    private func saveIPToFile(_ ip: String) {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/last_ip.txt"
+        do {
+            try ip.write(toFile: path, atomically: true, encoding: .utf8)
+        } catch {
+            print("Error saving IP: \(error)")
+        }
+    }
+    
+    private func loadIPFromFile() -> String? {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/last_ip.txt"
+        do {
+            let lastIP = try String(contentsOfFile: path, encoding: .utf8)
+            return lastIP
+        } catch {
+            print("Error loading IP: \(error)")
+            return nil
         }
     }
 }
