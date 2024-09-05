@@ -62,7 +62,7 @@ final class ViewController: UIViewController, VPNViewModelDelegate {
             viewModel.updateIPAddress(ipAddress)
             viewModel.toggleConnection()
         } else {
-            
+            showAlert(title: "Error", message: "Enter an IP address")
         }
     }
     
@@ -84,13 +84,20 @@ final class ViewController: UIViewController, VPNViewModelDelegate {
     
     // MARK: - Private Methods
     private func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "Background")
         
         view.addSubview(ipTextField)
         view.addSubview(statusLabel)
         view.addSubview(connectButton)
         
         setupConstraints()
+    }
+    
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
     }
     
     private func setupConstraints() {
@@ -113,5 +120,4 @@ final class ViewController: UIViewController, VPNViewModelDelegate {
             connectButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
 }

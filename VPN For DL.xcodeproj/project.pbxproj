@@ -13,6 +13,7 @@
 		D30B71DA2C884DC700A5715D /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D30B71D92C884DC700A5715D /* Base */; };
 		D30B71E32C88593500A5715D /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B71E22C88593500A5715D /* ViewModel.swift */; };
 		D30B71E72C885BC200A5715D /* VPNConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30B71E62C885BC200A5715D /* VPNConfig.swift */; };
+		D34770922C89A8130094ADEB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34770912C89A8130094ADEB /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D30B71DB2C884DC700A5715D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D30B71E22C88593500A5715D /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		D30B71E62C885BC200A5715D /* VPNConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VPNConfig.swift; sourceTree = "<group>"; };
+		D34770912C89A8130094ADEB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				D30B71D62C884DC700A5715D /* Assets.xcassets */,
+				D34770912C89A8130094ADEB /* Colors.xcassets */,
 				D30B71D82C884DC700A5715D /* LaunchScreen.storyboard */,
 			);
 			path = Resource;
@@ -157,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D34770922C89A8130094ADEB /* Colors.xcassets in Resources */,
 				D30B71D72C884DC700A5715D /* Assets.xcassets in Resources */,
 				D30B71DA2C884DC700A5715D /* Base in Resources */,
 			);

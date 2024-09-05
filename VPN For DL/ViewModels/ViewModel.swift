@@ -24,6 +24,7 @@ final class ViewModel {
         self.vpnConfig = VPNConfig(ipAddress: "", isConnected: false)
     }
     
+    // MARK: - Methods
     func updateIPAddress(_ ipAddress: String) {
         vpnConfig.ipAddress = ipAddress
         saveIPToFile(ipAddress)
@@ -40,6 +41,7 @@ final class ViewModel {
         }
     }
     
+    // MARK: - Private Methods
     private func saveIPToFile(_ ip: String) {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/last_ip.txt"
         do {
